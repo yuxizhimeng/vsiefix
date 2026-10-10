@@ -85,11 +85,19 @@
 
 ## 从源码构建 / Build from source
 
+最省事：用仓库里的 `build.ps1`（自动在 `.minecraft/libraries` 里找依赖；需要 JDK 21 的 `javac` / `jar` 在 PATH 上）：
+
+```powershell
+.\build.ps1 -McDir "$env:APPDATA\.minecraft"
+```
+
+手动编译 / Manual:
+
 ```
 javac -encoding UTF-8 --release 21 -proc:none \
       -cp "<sponge-mixin.jar>;<fml-loader.jar>;<client-1.21.1-*-srg.jar>;<neoforge-21.1.248-universal.jar>" \
       -d build/classes $(find src -name '*.java')
-jar --create --file vsiefix-1.2.1.jar -C build/classes . -C resources .
+jar --create --file vsiefix-1.2.1.jar -C build/classes . -C resources . -C build/extra .
 ```
 
 ---
