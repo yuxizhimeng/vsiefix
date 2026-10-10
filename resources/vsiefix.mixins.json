@@ -1,0 +1,15 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "com.example.vsiefix.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ControlSeatBlockEntityMixin",
+    "SeatRegistryMixin",
+    "BlockEntityRenderDispatcherMixin",
+    "AlwaysRenderGeoBlockRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

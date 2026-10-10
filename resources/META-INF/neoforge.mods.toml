@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+
+[[mods]]
+modId="vsiefix"
+version="1.2.1"
+displayName="VSIE Preview Lag Fix"
+authors="yuxizhimeng"
+description='''Stops Aeronautics: Interstellar Expansion (vsie) from doing heavy work inside Create schematic preview / virtual levels: its linked-peripheral bookkeeping is skipped, and its GeckoLib block renderers (AlwaysRenderGeoBlockRenderer and everything extending it) are not rendered there. Holding a blueprint that contains vsie blocks no longer tanks the frame rate. Real worlds behave exactly as before.'''
+
+[[mixins]]
+config="vsiefix.mixins.json"
+
+[[dependencies.vsiefix]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,22)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.vsiefix]]
+modId="vsie"
+type="optional"
+versionRange="[1.0.1,)"
+ordering="AFTER"
+side="BOTH"
